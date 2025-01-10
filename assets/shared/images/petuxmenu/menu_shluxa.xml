@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="shlyxa.png">
+<SubTexture name="shluxa idle0000" x="0" y="0" width="273" height="133" frameX="0" frameY="0" frameWidth="273" frameHeight="133" />
+<SubTexture name="shluxa selected0000" x="0" y="0" width="273" height="133" frameX="0" frameY="0" frameWidth="273" frameHeight="133" />
+</TextureAtlas>

@@ -1,0 +1,9 @@
+{	
+	"titlex":-150,
+	"titley":-100,
+	"startString":"PRESS ENTER TO PLAY",
+	"gfx":512,
+	"gfy":40,
+	"backgroundSprite":"",
+	"bpm":102
+}

@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="menu_petuxara.png">
+<SubTexture name="dedpetux idle0000" x="0" y="0" width="208" height="272" frameX="0" frameY="0" frameWidth="208" frameHeight="272" />
+<SubTexture name="dedpetux selected0000" x="0" y="0" width="208" height="272" frameX="0" frameY="0" frameWidth="208" frameHeight="272" />
+</TextureAtlas>
