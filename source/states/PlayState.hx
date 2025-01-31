@@ -20,7 +20,7 @@ import lime.utils.Assets;
 import openfl.utils.Assets as OpenFlAssets;
 import openfl.events.KeyboardEvent;
 import haxe.Json;
-..
+
 import cutscenes.CutsceneHandler;
 import cutscenes.DialogueBoxPsych;
 
@@ -112,6 +112,8 @@ class PlayState extends MusicBeatState
 	public var modchartTexts:Map<String, FlxText> = new Map<String, FlxText>();
 	public var modchartSaves:Map<String, FlxSave> = new Map<String, FlxSave>();
 	#end
+
+	public var precacheList:Map<String, String> = new Map<String, String>();
 
 	public var BF_X:Float = 770;
 	public var BF_Y:Float = 100;
@@ -1463,6 +1465,11 @@ class PlayState extends MusicBeatState
 				var newCharacter:String = event.value2;
 				addCharacterToList(newCharacter, charType);
 
+				case 'Play Video':
+				precacheList.set(event.value1, 'video');
+				Paths.video(event.value1);
+
+
 			case 'Play Sound':
 				Paths.sound(event.value1); //Precache sound
 		}
@@ -1548,6 +1555,8 @@ class PlayState extends MusicBeatState
 		stagesFunc(function(stage:BaseStage) stage.openSubState(SubState));
 		if (paused)
 		{
+			if(videoCutscene != null)
+				videoCutscene.videoSprite.pause();
 			if (FlxG.sound.music != null)
 			{
 				FlxG.sound.music.pause();
@@ -1568,6 +1577,8 @@ class PlayState extends MusicBeatState
 		stagesFunc(function(stage:BaseStage) stage.closeSubState());
 		if (paused)
 		{
+			if(videoCutscene != null)
+				videoCutscene.videoSprite.resume();
 			if (FlxG.sound.music != null && !startingSong)
 			{
 				resyncVocals();
